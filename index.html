@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UX Research Poster Draft — Yuxiao Chen</title>
+  <style>
+    :root {
+      --primary: #0052CC;
+      --accent: #FF5630;
+      --light: #E6F0FA;
+      --dark: #0B2E5C;
+      --text: #333;
+      --gray: #666;
+      --success: #00A854;
+      --warning: #FFAB00;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 2880px;
+      height: 3840px;
+      background: white;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.5;
+      padding: 120px;
+    }
+
+    .poster {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 80px;
+      justify-items: center;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      text-align: center;
+      max-width: 2400px;
+    }
+    .title {
+      font-size: 120px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .subtitle {
+      font-size: 60px;
+      font-weight: 400;
+      color: var(--primary);
+      max-width: 2200px;
+      margin: 0 auto 40px;
+    }
+    .byline {
+      font-size: 40px;
+      color: var(--gray);
+    }
+
+    /* ===== CONTENT GRID (2x2) ===== */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      width: 100%;
+      max-width: 2640px;
+      justify-items: center;
+    }
+
+    .section {
+      background: white;
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1240px;
+    }
+    .section h2 {
+      font-size: 56px;
+      color: var(--dark);
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+    }
+    .section h2::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 56px;
+      background: var(--accent);
+      border-radius: 8px;
+      margin-right: 24px;
+    }
+
+    /* CONTEXT */
+    .context {
+      grid-column: 1;
+    }
+    .context p {
+      font-size: 36px;
+      margin-bottom: 25px;
+      text-align: center;
+      max-width: 1000px;
+    }
+    .research-method {
+      background: #f9f9f9;
+      border-radius: 16px;
+      padding: 30px;
+      margin: 30px 0;
+      font-size: 32px;
+      text-align: left;
+      width: 100%;
+      max-width: 1000px;
+    }
+    .research-method h4 {
+      font-size: 40px;
+      color: var(--dark);
+      margin-bottom: 15px;
+    }
+    .insight {
+      background: var(--light);
+      border-left: 8px solid var(--accent);
+      padding: 40px;
+      font-size: 42px;
+      font-weight: 600;
+      margin: 40px 0;
+      line-height: 1.3;
+      text-align: center;
+      max-width: 1000px;
+      border-radius: 0 16px 16px 0;
+    }
+
+    .personas {
+      display: flex;
+      gap: 30px;
+      margin-top: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .persona {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 16px;
+      background: white;
+      border: 2px solid #ddd;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    .persona-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 72px;
+      color: var(--primary);
+    }
+    .persona h4 {
+      font-size: 36px;
+      margin: 20px 0 10px;
+      color: var(--primary);
+    }
+    .persona p {
+      font-size: 28px;
+      color: var(--gray);
+      margin-top: 8px;
+    }
+
+    /* WORKFLOWS & PD - CLEAN VERSION WITH ACCURATE OPTIONS & NO OVERLAP */
+    .workflows {
+      grid-column: 2;
+    }
+    .pd-section {
+      margin-bottom: 50px;
+      width: 100%;
+      max-width: 1100px;
+    }
+    .pd-section h3 {
+      font-size: 48px;
+      color: var(--dark);
+      margin: 30px 0 20px;
+      text-align: left;
+    }
+    .flow-diagram {
+      background: #f8f9fa;
+      border-radius: 16px;
+      padding: 40px;
+      font-size: 32px;
+      margin: 25px 0;
+      text-align: center;
+      width: 100%;
+      max-width: 1000px;
+    }
+    .flow-diagram strong {
+      color: var(--accent);
+    }
+    
+    /* CLEAN CARD SORTING - NO OVERLAP, NO SCROLLBARS */
+    .card-sorting-clean {
+      width: 100%;
+      max-width: 1100px;
+      margin: 40px 0;
+      background: white;
+      border-radius: 16px;
+      padding: 30px 20px;
+      overflow: hidden;
+    }
+    
+    .flow-header-clean {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+    
+    .step-header-clean {
+      width: 18%;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--dark);
+      min-height: 80px;
+    }
+    .step-header-clean::before {
+      content: attr(data-step);
+      display: block;
+      width: 45px;
+      height: 45px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 45px;
+    }
+    
+    .options-container-clean {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .step-options-clean {
+      width: 18%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .option-card-clean {
+      background: #f5f7ff;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid #d0d9ff;
+      font-size: 26px;
+      font-weight: 500;
+      min-height: 85px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      word-break: break-word;
+      line-height: 1.3;
+    }
+
+    /* QUOTE BLOCK */
+    .quote {
+      font-size: 48px;
+      font-style: italic;
+      margin: 45px 0;
+      padding: 40px;
+      background: #fdf6e3;
+      border-left: 8px solid var(--warning);
+      line-height: 1.4;
+      text-align: center;
+      max-width: 1000px;
+      border-radius: 0 16px 16px 0;
+    }
+
+    /* FINDINGS */
+    .findings {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .table {
+      width: 100%;
+      max-width: 1000px;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 32px;
+    }
+    .table th, .table td {
+      padding: 24px 30px;
+      text-align: left;
+      border-bottom: 2px solid #eee;
+    }
+    .table th {
+      background: var(--light);
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .check { color: var(--success); font-weight: bold; }
+    .cross { color: var(--accent); font-weight: bold; }
+    .neutral { color: var(--gray); }
+
+    /* DESIGN IMPLICATIONS */
+    .design {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    .principles {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 20px;
+      align-items: flex-start;
+      max-width: 1000px;
+    }
+    .principle {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .principle-number {
+      flex: 0 0 80px;
+      height: 80px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .principle-text {
+      flex: 1;
+    }
+    .principle-text h4 {
+      font-size: 38px;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .principle-text p {
+      font-size: 32px;
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      font-size: 36px;
+      color: var(--gray);
+      max-width: 1800px;
+      margin-top: 20px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 40px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-link {
+      font-size: 32px;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    /* IMAGE PLACEHOLDERS */
+    .image-placeholder {
+      background: #f8f9fa;
+      border: 3px dashed #ddd;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 30px 0;
+      padding: 30px;
+      text-align: center;
+    }
+    .image-placeholder p {
+      font-size: 28px;
+      color: var(--gray);
+      margin-top: 15px;
+      max-width: 800px;
+    }
+    .image-placeholder h4 {
+      font-size: 36px;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="header">
+      <h1 class="title">"Creation, Not Certification"</h1>
+      <div class="subtitle">Redesigning UTM's 3D Printing Service Around User Intent</div>
+      <div class="byline">Yuxiao (Tom) Chen | CCT477H5 | University of Toronto Mississauga</div>
+    </div>
+
+    <div class="content">
+      <!-- CONTEXTUAL INQUIRY -->
+      <div class="section context">
+        <h2>Contextual Inquiry</h2>
+        <p>UTM Library Makerspace offers 3D printing—but its rigid, uniform certification workflow mismatches diverse student intentions and creates unnecessary friction.</p>
+        
+        <div class="research-method">
+          <h4>-Methods & Setting-</h4>
+          <p>• 12 hours of observation + brief interviews near Makerspace entrance (Oct 15-21, 2025)</p>
+          <p>• Ethical protocol: Verbal consent, anonymization, voluntary participation</p>
+          <p>• Focus: Remote print submission process via Gerstein portal</p>
+        </div>
+
+        <div class="insight">
+          "Students want creation, not certification—UTM's system teaches before it empowers."
+        </div>
+
+        <div class="research-method">
+          <h4>-Key Observations-</h4>
+          <p>• Students repeatedly questioned: "Do I really need to watch this whole video again?"</p>
+          <p>• Experienced users complained about "being treated like a first-timer every time"</p>
+          <p>• Administrative burden (screenshots, forms) caused abandonment of print jobs</p>
+        </div>
+
+        <div class="personas">
+          <div class="persona">
+            <div class="persona-img">
+              <img src="portrait.png" alt="Leo" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover;">
+            </div>
+            <div><strong>Leo</strong></div>
+            <h4>Print & Go</h4>
+            <p>"Just need to print my assignment model."</p>
+            <p style="font-size: 26px; color: var(--gray); margin-top: 5px;">Undergraduate • Occasional user • Time-pressured</p>
+          </div>
+          <div class="persona">
+            <div class="persona-img">
+              <img src="portrait.png" alt="Maya" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover;">
+            </div>
+            <div><strong>Maya</strong></div>
+            <h4>Learn & Create</h4>
+            <p>"I want to try, but not drown in admin."</p>
+            <p style="font-size: 26px; color: var(--gray); margin-top: 5px;">Design student • Exploratory learner • Needs guidance</p>
+          </div>
+          <div class="persona">
+            <div class="persona-img">
+              <img src="portrait.png" alt="Ryan" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover;">
+            </div>
+            <div><strong>Ryan</strong></div>
+            <h4>Expert Access</h4>
+            <p>"I'm certified—stop treating me like a newbie."</p>
+            <p style="font-size: 26px; color: var(--gray); margin-top: 5px;">Engineering PhD • Frequent user • Values efficiency</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CI WORKFLOWS & PD - CLEAN VERSION WITH ACCURATE OPTIONS & NO OVERLAP -->
+      <div class="section workflows">
+        <h2>CI Workflows & Participatory Design</h2>
+        
+        <div class="pd-section">
+          <h3>Current Workflow Pain Points</h3>
+          <div class="flow-diagram">
+            <strong>Linear & Bureaucratic:</strong><br>
+            Register → Full 30-min training → Upload + Screenshots → Manual approval → Wait (no ETA)
+          </div>
+        </div>
+
+        <div class="pd-section">
+          <h3>Participatory Design: Digital Card Sorting</h3>
+          <p style="text-align: left; max-width: 1000px; margin-bottom: 20px;">
+            <strong>Method:</strong> Digital card sorting with 5 sequential decision points, adapted from Sanders & Stappers' Convivial Toolbox (2014).
+          </p>
+          
+          <div class="card-sorting-clean">
+            <div class="flow-header-clean">
+              <div class="step-header-clean" data-step="1">Identity</div>
+              <div class="step-header-clean" data-step="2">Intent</div>
+              <div class="step-header-clean" data-step="3">Safety</div>
+              <div class="step-header-clean" data-step="4">Upload</div>
+              <div class="step-header-clean" data-step="5">Approval</div>
+            </div>
+            
+            <div class="options-container-clean">
+              <div class="step-options-clean">
+                <div class="option-card-clean">Beginner</div>
+                <div class="option-card-clean">Experienced</div>
+              </div>
+              
+              <div class="step-options-clean">
+                <div class="option-card-clean">Print Only</div>
+                <div class="option-card-clean">Learn & Create</div>
+                <div class="option-card-clean">Frequent Use</div>
+              </div>
+              
+              <div class="step-options-clean">
+                <div class="option-card-clean">5-min Quick Safety Video</div>
+                <div class="option-card-clean">30-min Full Safety Training</div>
+                <div class="option-card-clean">Safety Quiz</div>
+                <div class="option-card-clean">Electronic Liability Waiver</div>
+                <div class="option-card-clean">Safety Guide</div>
+                <div class="option-card-clean">In-person Demo</div>
+              </div>
+              
+              <div class="step-options-clean">
+                <div class="option-card-clean">Import file to MakerBot software and screenshot</div>
+                <div class="option-card-clean">Upload STL/OBJ source file</div>
+                <div class="option-card-clean">Upload screenshot proving simulated print</div>
+                <div class="option-card-clean">Fill 300-word description of printing purpose</div>
+                <div class="option-card-clean">Select material and color</div>
+                <div class="option-card-clean">Set estimated print time</div>
+                <div class="option-card-clean">Automatic file validation (system check)</div>
+                <div class="option-card-clean">One-click upload (no screenshots)</div>
+              </div>
+              
+              <div class="step-options-clean">
+                <div class="option-card-clean">Wait for staff daily review</div>
+                <div class="option-card-clean">Automatic approval (based on success history)</div>
+                <div class="option-card-clean">View real-time queue status</div>
+                <div class="option-card-clean">Select priority (standard/expedited)</div>
+                <div class="option-card-clean">Estimated waiting time display</div>
+                <div class="option-card-clean">Schedule specific print time slots</div>
+                <div class="option-card-clean">Set print completion notification</div>
+              </div>
+            </div>
+          </div>
+          
+          <p style="text-align: left; max-width: 1000px; margin-top: 20px; font-size: 32px;">
+            <strong>Process:</strong> 7 UTM students (4 beginners, 3 experienced) completed the digital activity (Nov 8-12, avg. 8 minutes). Participants built personalized pathways by selecting options that matched their identity and intent.
+          </p>
+        </div>
+
+        <div class="quote">
+          "When given agency in design decisions, students naturally gravitate toward systems that balance safety with autonomy."
+        </div>
+      </div>
+
+      <!-- FINDINGS -->
+      <div class="section findings">
+        <h2>Findings & Design Implications</h2>
+        
+        <div class="research-method">
+          <h4>-Methodological Context-</h4>
+          <p>• n=7 complete responses (4 beginners, 3 experienced)</p>
+          <p>• Sessions averaged 8 minutes—critical during final academic weeks</p>
+          <p>• All participants completed electronic consent forms</p>
+          <p>• Limitation: Small sample size from personal networks; future work will expand recruitment</p>
+        </div>
+
+        <div class="insight" style="font-size: 38px; padding: 25px; margin: 25px 0;">
+          Transparency & efficiency are universal needs; bureaucracy is universally rejected regardless of expertise level.
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Preference</th>
+              <th>All (n=7)</th>
+              <th>Beginners (n=4)</th>
+              <th>Experienced (n=3)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Print completion notification</strong></td>
+              <td class="check">7 ✔</td>
+              <td class="check">4 ✔</td>
+              <td class="check">3 ✔</td>
+            </tr>
+            <tr>
+              <td><strong>Quick safety video</strong> (5-min)</td>
+              <td class="check">6 ✔</td>
+              <td class="check">4 ✔</td>
+              <td class="check">2 ✔</td>
+            </tr>
+            <tr>
+              <td><strong>Full safety video</strong> (30-min)</td>
+              <td class="cross">1 ✖</td>
+              <td class="cross">1 ✖</td>
+              <td class="neutral">0</td>
+            </tr>
+            <tr>
+              <td><strong>One-click upload</strong></td>
+              <td class="check">6 ✔</td>
+              <td class="check">4 ✔</td>
+              <td class="check">2 ✔</td>
+            </tr>
+            <tr>
+              <td><strong>Material color choice</strong></td>
+              <td class="check">5 ✔</td>
+              <td class="neutral">1</td>
+              <td class="check">4 ✔</td>
+            </tr>
+            <tr>
+              <td><strong>Screenshot requirements</strong></td>
+              <td class="cross">1 ✖</td>
+              <td class="cross">1 ✖</td>
+              <td class="cross">0 ✖</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="image-placeholder">
+          <h4>[IMAGE PLACEHOLDER: Data Visualization]</h4>
+          <p>Chart needed: Bar chart showing safety option preferences by user type</p>
+        </div>
+      </div>
+
+      <!-- DESIGN DIRECTIONS -->
+      <div class="section design">
+        <h2>Design Directions</h2>
+        <p>From certification gate → creation gateway: Four evidence-based principles derived from participatory data</p>
+
+        <div class="principles">
+          <div class="principle">
+            <div class="principle-number">1</div>
+            <div class="principle-text">
+              <h4>Intent-First Access</h4>
+              <p>Landing page asks: "What do you want to do today?" → routes to Print / Learn / Expert flow. This addresses the core mismatch between institutional procedure and user purpose identified in contextual inquiry.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-number">2</div>
+            <div class="principle-text">
+              <h4>Tiered Safety</h4>
+              <p>• Print&Go: 5-min video + waiver<br>• Learn&Create: + quiz (80% pass)<br>• Expert: self-certify + liability waiver</p>
+              <p style="font-size: 28px; color: var(--gray); margin-top: 8px;">Data insight: Even beginners rejected comprehensive training in favor of targeted safety information.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-number">3</div>
+            <div class="principle-text">
+              <h4>Transparent Queue</h4>
+              <p>Real-time dashboard: "Your print #3 in queue • Est. ready in 47 min" with completion notification. Universal need (7/7 participants) regardless of expertise level.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-number">4</div>
+            <div class="principle-text">
+              <h4>Progressive Trust</h4>
+              <p>Auto-approval after 3 successful prints → unlocks direct access to printers. Rewards competence over compliance, addressing expert frustration with redundant oversight.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="image-placeholder">
+          <h4>[IMAGE PLACEHOLDER: Wireframe]</h4>
+          <p>Sketch needed: Low-fidelity wireframe of intent-first landing page with the three pathways</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>Data: github.com/tom-y-chen/CCT477_Participatory_Design</div>
+      <div>Tool: Digital Card Sorting • n=7 UTM students • Oct–Nov 2025</div>
+      <div class="footer-links">
+        <a href="https://tom-y-chen.github.io/CCT477_Participatory_Design/" class="footer-link" target="_blank">Interactive Prototype</a>
+        <a href="https://github.com/tom-y-chen/CCT477_Participatory_Design" class="footer-link" target="_blank">Research Data & Code</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
