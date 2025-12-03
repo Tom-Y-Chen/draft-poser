@@ -16,13 +16,13 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      width: 2880px;
-      height: 3840px;
+      width: 4608px; /* 48 inches at 96 DPI */
+      height: 3456px; /* 36 inches at 96 DPI */
       background: white;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
       line-height: 1.5;
-      padding: 120px;
+      padding: 100px;
     }
 
     .poster {
@@ -30,31 +30,31 @@
       height: 100%;
       display: grid;
       grid-template-rows: auto 1fr auto;
-      gap: 80px;
+      gap: 60px;
       justify-items: center;
     }
 
     /* ===== HEADER ===== */
     .header {
       text-align: center;
-      max-width: 2400px;
+      max-width: 4200px;
     }
     .title {
-      font-size: 120px;
+      font-size: 110px;
       font-weight: 800;
       color: var(--dark);
       margin-bottom: 20px;
       line-height: 1.1;
     }
     .subtitle {
-      font-size: 60px;
+      font-size: 55px;
       font-weight: 400;
       color: var(--primary);
-      max-width: 2200px;
-      margin: 0 auto 40px;
+      max-width: 4000px;
+      margin: 0 auto 30px;
     }
     .byline {
-      font-size: 40px;
+      font-size: 36px;
       color: var(--gray);
     }
 
@@ -62,37 +62,37 @@
     .content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: 60px;
       width: 100%;
-      max-width: 2640px;
+      max-width: 4300px;
       justify-items: center;
     }
 
     .section {
       background: white;
-      padding: 60px;
+      padding: 50px;
       border-radius: 20px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.03);
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 1240px;
+      max-width: 2000px;
     }
     .section h2 {
-      font-size: 56px;
+      font-size: 52px;
       color: var(--dark);
-      margin-bottom: 40px;
+      margin-bottom: 35px;
       display: flex;
       align-items: center;
     }
     .section h2::before {
       content: "";
       display: inline-block;
-      width: 16px;
-      height: 56px;
+      width: 14px;
+      height: 52px;
       background: var(--accent);
       border-radius: 8px;
-      margin-right: 24px;
+      margin-right: 20px;
     }
 
     /* CONTEXT */
@@ -100,74 +100,74 @@
       grid-column: 1;
     }
     .context p {
-      font-size: 36px;
+      font-size: 32px;
       margin-bottom: 25px;
       text-align: center;
-      max-width: 1000px;
+      max-width: 1800px;
     }
     .research-method {
       background: #f9f9f9;
       border-radius: 16px;
-      padding: 30px;
-      margin: 30px 0;
-      font-size: 32px;
+      padding: 25px;
+      margin: 25px 0;
+      font-size: 28px;
       text-align: left;
       width: 100%;
-      max-width: 1000px;
+      max-width: 1800px;
     }
     .research-method h4 {
-      font-size: 40px;
+      font-size: 36px;
       color: var(--dark);
       margin-bottom: 15px;
     }
     .insight {
       background: var(--light);
       border-left: 8px solid var(--accent);
-      padding: 40px;
-      font-size: 42px;
+      padding: 35px;
+      font-size: 38px;
       font-weight: 600;
-      margin: 40px 0;
+      margin: 35px 0;
       line-height: 1.3;
       text-align: center;
-      max-width: 1000px;
+      max-width: 1800px;
       border-radius: 0 16px 16px 0;
     }
 
     .personas {
       display: flex;
-      gap: 30px;
-      margin-top: 40px;
+      gap: 25px;
+      margin-top: 35px;
       justify-content: center;
       flex-wrap: wrap;
     }
     .persona {
       flex: 1;
-      min-width: 280px;
+      min-width: 250px;
       text-align: center;
-      padding: 30px 20px;
+      padding: 25px 20px;
       border-radius: 16px;
       background: white;
       border: 2px solid #ddd;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
     .persona-img {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       margin: 0 auto 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 72px;
+      font-size: 64px;
       color: var(--primary);
     }
     .persona h4 {
-      font-size: 36px;
-      margin: 20px 0 10px;
+      font-size: 32px;
+      margin: 18px 0 10px;
       color: var(--primary);
     }
     .persona p {
-      font-size: 28px;
+      font-size: 26px;
       color: var(--gray);
       margin-top: 8px;
     }
@@ -177,25 +177,25 @@
       grid-column: 2;
     }
     .pd-section {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       width: 100%;
-      max-width: 1100px;
+      max-width: 1900px;
     }
     .pd-section h3 {
-      font-size: 48px;
+      font-size: 44px;
       color: var(--dark);
-      margin: 30px 0 20px;
+      margin: 25px 0 20px;
       text-align: left;
     }
     .flow-diagram {
       background: #f8f9fa;
       border-radius: 16px;
-      padding: 40px;
-      font-size: 32px;
-      margin: 25px 0;
+      padding: 35px;
+      font-size: 28px;
+      margin: 20px 0;
       text-align: center;
       width: 100%;
-      max-width: 1000px;
+      max-width: 1800px;
     }
     .flow-diagram strong {
       color: var(--accent);
@@ -204,81 +204,85 @@
     /* CLEAN CARD SORTING - NO OVERLAP, NO SCROLLBARS */
     .card-sorting-clean {
       width: 100%;
-      max-width: 1100px;
-      margin: 40px 0;
+      max-width: 1900px;
+      margin: 35px 0;
       background: white;
       border-radius: 16px;
-      padding: 30px 20px;
+      padding: 25px 20px;
       overflow: hidden;
     }
     
     .flow-header-clean {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 25px;
+      margin-bottom: 40px; /* 增加底部边距 */
+      padding: 0 20px; /* 添加水平内边距 */
     }
     
     .step-header-clean {
       width: 18%;
       text-align: center;
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 700;
       color: var(--dark);
-      min-height: 80px;
+      min-height: 70px;
     }
     .step-header-clean::before {
       content: attr(data-step);
       display: block;
-      width: 45px;
-      height: 45px;
+      width: 40px;
+      height: 40px;
       background: var(--primary);
       color: white;
       border-radius: 50%;
-      margin: 0 auto 12px;
-      font-size: 28px;
+      margin: 0 auto 10px;
+      font-size: 24px;
       font-weight: bold;
-      line-height: 45px;
+      line-height: 40px;
     }
     
     .options-container-clean {
       display: flex;
       justify-content: space-between;
+      gap: 30px; /* 增加列间距 */
+      padding: 0 20px; /* 添加水平内边距 */
     }
     
     .step-options-clean {
       width: 18%;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 20px; /* 增加卡片间距 */
     }
     
     .option-card-clean {
       background: #f5f7ff;
       border-radius: 10px;
-      padding: 16px;
+      padding: 20px 15px; /* 增加上下内边距 */
       text-align: center;
       border: 1px solid #d0d9ff;
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 500;
-      min-height: 85px;
+      min-height: 90px; /* 调整最小高度 */
       display: flex;
       align-items: center;
       justify-content: center;
       word-break: break-word;
       line-height: 1.3;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 添加轻微阴影 */
     }
 
     /* QUOTE BLOCK */
     .quote {
-      font-size: 48px;
+      font-size: 42px;
       font-style: italic;
-      margin: 45px 0;
-      padding: 40px;
+      margin: 40px 0;
+      padding: 35px;
       background: #fdf6e3;
       border-left: 8px solid var(--warning);
       line-height: 1.4;
       text-align: center;
-      max-width: 1000px;
+      max-width: 1800px;
       border-radius: 0 16px 16px 0;
     }
 
@@ -289,13 +293,13 @@
     }
     .table {
       width: 100%;
-      max-width: 1000px;
+      max-width: 1800px;
       border-collapse: collapse;
       margin-top: 20px;
-      font-size: 32px;
+      font-size: 28px;
     }
     .table th, .table td {
-      padding: 24px 30px;
+      padding: 20px 25px;
       text-align: left;
       border-bottom: 2px solid #eee;
     }
@@ -316,27 +320,27 @@
     .principles {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 25px;
       margin-top: 20px;
       align-items: flex-start;
-      max-width: 1000px;
+      max-width: 1800px;
     }
     .principle {
       display: flex;
-      gap: 30px;
+      gap: 25px;
       align-items: flex-start;
       width: 100%;
     }
     .principle-number {
-      flex: 0 0 80px;
-      height: 80px;
+      flex: 0 0 70px;
+      height: 70px;
       background: var(--primary);
       color: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 40px;
+      font-size: 36px;
       font-weight: bold;
       flex-shrink: 0;
     }
@@ -344,32 +348,32 @@
       flex: 1;
     }
     .principle-text h4 {
-      font-size: 38px;
+      font-size: 34px;
       margin-bottom: 12px;
       color: var(--dark);
     }
     .principle-text p {
-      font-size: 32px;
+      font-size: 28px;
       line-height: 1.5;
     }
 
     /* FOOTER */
     .footer {
       text-align: center;
-      font-size: 36px;
+      font-size: 32px;
       color: var(--gray);
-      max-width: 1800px;
+      max-width: 4000px;
       margin-top: 20px;
     }
     .footer-links {
       display: flex;
-      gap: 40px;
+      gap: 35px;
       margin-top: 20px;
       flex-wrap: wrap;
       justify-content: center;
     }
     .footer-link {
-      font-size: 32px;
+      font-size: 28px;
       color: var(--primary);
       text-decoration: none;
     }
@@ -391,15 +395,22 @@
       text-align: center;
     }
     .image-placeholder p {
-      font-size: 28px;
+      font-size: 26px;
       color: var(--gray);
       margin-top: 15px;
-      max-width: 800px;
+      max-width: 1600px;
     }
     .image-placeholder h4 {
-      font-size: 36px;
+      font-size: 32px;
       color: var(--dark);
       margin-bottom: 10px;
+    }
+    
+    /* Image styling */
+    .image-placeholder img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
     }
   </style>
 </head>
@@ -480,7 +491,7 @@
 
         <div class="pd-section">
           <h3>Participatory Design: Digital Card Sorting</h3>
-          <p style="text-align: left; max-width: 1000px; margin-bottom: 20px;">
+          <p style="text-align: left; max-width: 1800px; margin-bottom: 20px;">
             <strong>Method:</strong> Digital card sorting with 5 sequential decision points, adapted from Sanders & Stappers' Convivial Toolbox (2014).
           </p>
           
@@ -537,7 +548,7 @@
             </div>
           </div>
           
-          <p style="text-align: left; max-width: 1000px; margin-top: 20px; font-size: 32px;">
+          <p style="text-align: left; max-width: 1800px; margin-top: 20px; font-size: 28px;">
             <strong>Process:</strong> 7 UTM students (4 beginners, 3 experienced) completed the digital activity (Nov 8-12, avg. 8 minutes). Participants built personalized pathways by selecting options that matched their identity and intent.
           </p>
         </div>
@@ -559,7 +570,7 @@
           <p>• Limitation: Small sample size from personal networks; future work will expand recruitment</p>
         </div>
 
-        <div class="insight" style="font-size: 38px; padding: 25px; margin: 25px 0;">
+        <div class="insight" style="font-size: 36px; padding: 25px; margin: 25px 0;">
           Transparency & efficiency are universal needs; bureaucracy is universally rejected regardless of expertise level.
         </div>
 
@@ -613,8 +624,8 @@
         </table>
         
         <div class="image-placeholder">
-          <h4>[IMAGE PLACEHOLDER: Data Visualization]</h4>
-          <p>Chart needed: Bar chart showing safety option preferences by user type</p>
+          <img src="2.jpg" alt="Main visualization showing user preferences data" style="max-width: 100%; height: auto; border-radius: 16px;">
+          <p>Main view: User preference data visualization</p>
         </div>
       </div>
 
@@ -636,7 +647,7 @@
             <div class="principle-text">
               <h4>Tiered Safety</h4>
               <p>• Print&Go: 5-min video + waiver<br>• Learn&Create: + quiz (80% pass)<br>• Expert: self-certify + liability waiver</p>
-              <p style="font-size: 28px; color: var(--gray); margin-top: 8px;">Data insight: Even beginners rejected comprehensive training in favor of targeted safety information.</p>
+              <p style="font-size: 26px; color: var(--gray); margin-top: 8px;">Data insight: Even beginners rejected comprehensive training in favor of targeted safety information.</p>
             </div>
           </div>
           <div class="principle">
@@ -656,8 +667,11 @@
         </div>
         
         <div class="image-placeholder">
-          <h4>[IMAGE PLACEHOLDER: Wireframe]</h4>
-          <p>Sketch needed: Low-fidelity wireframe of intent-first landing page with the three pathways</p>
+          <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <img src="1.jpg" alt="Supplementary view 1" style="max-width: 48%; height: auto; border-radius: 16px;">
+            <img src="3.jpg" alt="Supplementary view 2" style="max-width: 48%; height: auto; border-radius: 16px;">
+          </div>
+          <p>Supplementary views: Interface wireframes and design concepts</p>
         </div>
       </div>
     </div>
